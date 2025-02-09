@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.toMutableStateList
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun WellnessScreen(
