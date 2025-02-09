@@ -14,6 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a66721_mapmodul13.ui.theme._66721_MAPModul13Theme
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
+import androidx.compose.ui.unit.dp
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,16 +29,31 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // Add your UI composable here
-                    Greeting("Hello, Jetpack Compose!")
+                    WellnessScreen()
                 }
             }
         }
     }
 }
 
-// Example Composable Function
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello, $name!", style = MaterialTheme.typography.bodyLarge)
+fun WaterCounter(modifier: Modifier = Modifier) {
+    val count = 0
+    Text(
+        text = "You've had $count glasses.",
+        modifier = modifier.padding(16.dp)
+    )
+}
+
+@Composable
+fun WellnessScreen(modifier: Modifier = Modifier) {
+    WaterCounter(modifier)
+}
+
+@Preview(showBackground = true)
+@Composable
+fun WellnessScreenPreview() {
+    _66721_MAPModul13Theme {
+        WellnessScreen()
+    }
 }
