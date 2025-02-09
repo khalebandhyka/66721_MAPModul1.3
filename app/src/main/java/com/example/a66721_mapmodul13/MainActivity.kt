@@ -25,6 +25,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.ui.Alignment
+import androidx.compose.runtime.saveable.rememberSaveable
 
 
 
@@ -48,7 +49,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
     Column(modifier = modifier.padding(16.dp)) {
-        var count by remember { mutableStateOf(0) }
+        var count by rememberSaveable { mutableStateOf(0) }
         if (count > 0) {
             var showTask by remember { mutableStateOf(true) }
             if (showTask) {
