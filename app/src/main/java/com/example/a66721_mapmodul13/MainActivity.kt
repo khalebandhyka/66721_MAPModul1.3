@@ -26,7 +26,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.ui.Alignment
 import androidx.compose.runtime.saveable.rememberSaveable
-
+import androidx.compose.material3.Checkbox
+import androidx.compose.foundation.layout.Column
 
 
 class MainActivity : ComponentActivity() {
@@ -76,7 +77,10 @@ fun WaterCounter(modifier: Modifier = Modifier) {
 
 @Composable
 fun WellnessScreen(modifier: Modifier = Modifier) {
-    WaterCounter(modifier)
+    Column(modifier = modifier) {
+        StatefulCounter()
+        WellnessTasksList()
+    }
 }
 
 @Composable
